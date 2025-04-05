@@ -14,7 +14,7 @@ def load_data(filename="addressbook.pkl"):
         with open(filename, "rb") as file:
             return pickle.load(file)
     except FileNotFoundError as error:
-        log_error(error)
+        log_error(f"File {filename} not found. New book was created, please proceed. All changes would be saved.")
         return AddressBook()
 
 @contextmanager
